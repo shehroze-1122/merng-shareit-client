@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import { Route, Navigate, Outlet  } from 'react-router-dom'
+import { Navigate, Outlet  } from 'react-router-dom'
 
 import { authContext } from '../context/AuthContextProvider'
-const AuthRoute = ({children}) => {
+const AuthRoute = () => {
 
     const { user } = useContext(authContext);
     
