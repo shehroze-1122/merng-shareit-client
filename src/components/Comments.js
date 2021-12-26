@@ -3,7 +3,7 @@ import moment from 'moment'
 import gql from 'graphql-tag'
 import { useMutation } from '@apollo/client'
 
-import { Form, Comment, Header, Button, Popup } from 'semantic-ui-react'
+import { Form, Comment, Header, Button } from 'semantic-ui-react'
 
 import Delete from './Delete'
 
