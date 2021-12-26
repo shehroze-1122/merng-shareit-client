@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import gql from 'graphql-tag';
 
 import { authContext } from '../context/AuthContextProvider';
+import Error from '../components/Error';
 
 const LOGIN_USER = gql`
     mutation loginUser($loginInput: LoginInput!){
@@ -95,18 +96,13 @@ const Login = () => {
             size='large'
             className='submit-button'  
         /> 
-
         {
             Object.keys(error).length? (
-                <div className='ui message err-msg'>
-                    <ul className='list'>
-                        {Object.values(error).map((err)=>{
-                          return  <li key={err}> {err}</li>
-                        })}
-                    </ul>
-                </div>
-            ):null
+                <Error error={error}/>
+            ): null
         }
+
+        
         </Form>
     )
 }

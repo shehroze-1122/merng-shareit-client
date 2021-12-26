@@ -5,7 +5,9 @@
 .ui.dimmer .ui.workaround.loader:after {
   border-color: #767676 transparent transparent;
 }
-
+.ui.ui.ui.green.label {
+  background-color: #0c7a26 !important;
+}
 .err-msg{
   background-color: rgb(252, 116, 116) !important;
 }

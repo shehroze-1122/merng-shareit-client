@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Dimmer, Loader, Grid } from 'semantic-ui-react'
+import { Dimmer, Loader, Grid, Transition } from 'semantic-ui-react'
 import { useQuery } from '@apollo/client'
 import gql from 'graphql-tag';
 
@@ -32,9 +32,16 @@ export const FETCH_POSTS_QUERY = gql`
 
 `
 const Home = () => {
+
     const { data, loading, error } = useQuery(FETCH_POSTS_QUERY);
 
     const { user } = useContext(authContext);
+
+    if(error) return (
+        <div className='ui message err-msg' style={{marginBottom:'20px'}}>
+            <p> {error.message}</p>    
+        </div>
+    )
 
     return (
         <Grid columns='three'>
@@ -56,12 +63,16 @@ const Home = () => {
                         )
                     }
                    
-                    
-                   { data.getPosts.map((post)=>(
-                        <Grid.Column key={post.id}>
-                            <PostCard post={post}/>
-                        </Grid.Column>
-                   ))}
+                    <Transition.Group
+                        duration={200}
+                    >  
+                        { data.getPosts.map((post)=>(
+                                <Grid.Column key={post.id}>
+                                    <PostCard post={post}/>
+                                </Grid.Column>
+                        ))}
+                   </Transition.Group>
+
                 </Grid.Row>
             )}
             

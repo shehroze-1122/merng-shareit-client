@@ -61,6 +61,7 @@ const PostForm = () => {
     return (
         <Form loading={loading}>
             <h1>Create a Post</h1>
+
             <Form.Input 
                 fluid
                 name='postBody'
@@ -68,13 +69,7 @@ const PostForm = () => {
                 onChange={onChange}
                 value={body}
                 size='massive'
-                error={ !error? false: {
-                    content: error.message,
-                    pointing: 'below'
-                }}
-                
             />
-
 
             <Button 
                 primary
@@ -83,8 +78,16 @@ const PostForm = () => {
                 onClick={onSubmit}
                 size='large'
                 className='submit-button'  
+                style={{marginBottom: '20px'}}
             /> 
-
+            {
+                error && (
+                <div className='ui message err-msg' style={{marginBottom:'20px'}}>
+                    <p> {error.message}</p>    
+                </div>
+                )
+            }
+        
         </Form>
     )
 }

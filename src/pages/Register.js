@@ -5,6 +5,7 @@ import {useNavigate} from 'react-router-dom';
 import gql from 'graphql-tag';
 
 import { authContext } from '../context/AuthContextProvider';
+import Error from '../components/Error';
 
 const REGISTER_USER = gql`
     mutation registerUser($registerInput: RegisterInput!){
@@ -125,16 +126,10 @@ const Register = () => {
 
         {
             Object.keys(error).length? (
-                <div className='ui message err-msg'>
-                    <ul className='list'>
-                        {Object.values(error).map((err)=>{
-                          console.log(err)
-                          return  <li key={err}> {err}</li>
-                        })}
-                    </ul>
-                </div>
+                <Error error={error}/>
             ):null
         }
+
         </Form>
     )
 }

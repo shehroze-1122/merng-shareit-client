@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import { AuthContextProvider } from './context/AuthContextProvider';
 import AuthRoute from './utils/AuthRoute';
+import Post from './pages/Post';
 
 import 'fomantic-ui-css/semantic.min.css'
 import './App.css';
@@ -29,7 +30,7 @@ const App = ()=> {
               <Route exact path='/register' element={<Register/>}/>
             </Route>
             
-           
+           <Route exact path='/post/:postId' element={<Post />} />
           
           </Routes>
         </Router>
