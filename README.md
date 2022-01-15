@@ -7,6 +7,26 @@ It's a CRUD Application and it has a login and register page. The home page disp
 
 ## Demo
 
+- Home Page when user is not logged in
+
+![Home](https://github.com/shehroze-1122/merng-shareit-client/blob/main/Readme%20Images/home-loggedout.PNG
+)
+
+- Individual Post Page
+
+![Post](https://github.com/shehroze-1122/merng-shareit-client/blob/main/Readme%20Images/post.PNG)
+
+- Login Page
+
+![Login](https://github.com/shehroze-1122/merng-shareit-client/blob/main/Readme%20Images/login.PNG)
+
+- Register Page
+
+![Register](https://github.com/shehroze-1122/merng-shareit-client/blob/main/Readme%20Images/register.PNG)
+
+- Home Page when user is logged. In this view a delete icon will be displayed against posts and comments that belong to the user logged in.
+
+![Home](https://github.com/shehroze-1122/merng-shareit-client/blob/main/Readme%20Images/home.PNG)
 
 ## Technologies used
 - ReactJs
