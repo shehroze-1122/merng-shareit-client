@@ -11,6 +11,7 @@ const authContext = createContext({
 const initialState = {
     user: null
 }
+
 if(localStorage.getItem('jwtToken')){
     const userTokenDecoded = jwtDecode(localStorage.getItem('jwtToken'));
     // exp is in seconds(which will be less than Date.now() measured in milliseconds)
