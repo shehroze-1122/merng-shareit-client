@@ -19,6 +19,7 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
+    "postinstall": "semantic-ui-css-patch",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -42,5 +43,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://merng-shareit-server.herokuapp.com/"
+  "proxy": "https://shareit.onrender.com/",
+  "devDependencies": {
+    "@semantic-ui-react/css-patch": "^1.1.2"
+  }
 }
