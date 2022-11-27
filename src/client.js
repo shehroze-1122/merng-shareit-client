@@ -2,7 +2,7 @@ import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-  uri: "https://merng-shareit-server.herokuapp.com/",
+  uri: "https://shareit.onrender.com/",
 });
 const cache = new InMemoryCache();
 const authLink = setContext(() => {
